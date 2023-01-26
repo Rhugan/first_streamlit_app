@@ -24,7 +24,8 @@ streamlit.dataframe(fruits_to_show)
 
 # New section displaying Fruityvice API results
 streamlit.header('Fruitvice Fruit Advice!')
-fruit_name = 'kiwi'
+fruit_name = streamlit.text_input('What fruit would you like information about?','Kiwi')
+streamlit.write('The user entered ', fruit_name)
 fruityvice_response = requests.get(f"https://fruityvice.com/api/fruit/{fruit_name}")
 
 # use pandas to normalize json response and show as a table 
